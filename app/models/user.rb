@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  enum role: { user: 0, admin: 1 }
+
   # the authenticate method from devise documentation
   def self.authenticate(email, password)
     user = User.find_for_authentication(email: email)
