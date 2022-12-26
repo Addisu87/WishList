@@ -5,8 +5,8 @@ class HomeController < ApplicationController
     @application = Doorkeeper::Application.first
 
     @application = {
-      client_id: @application.uid,
-      client_secret: @application.secret
+      # client_id: @application.uid,
+      # client_secret: @application.secret
     }
   end
 end
