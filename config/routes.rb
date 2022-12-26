@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  # Defines the root path route ("/")
   root 'pages#home'
 
   use_doorkeeper
@@ -6,7 +7,4 @@ Rails.application.routes.draw do
   resources :books
   draw :api
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "home#index"
 end
