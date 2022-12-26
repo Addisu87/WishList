@@ -4,7 +4,10 @@ class BooksController < ApplicationController
   # GET /books or /books.json
   def index
     @books = Book.all
-    render json: @books
+    respond_to do |format|
+      format.json { render json: @books }
+      format.any { redirect_to root_url }
+    end
   end
 
   # GET /books/1 or /books/1.json
