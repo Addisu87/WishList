@@ -4,6 +4,7 @@ module Api
       class BooksController < ApiController
         before_action :set_book, only: %i[show]
         skip_before_action :doorkeeper_authorize!
+        before_action :admin?
 
         # GET /books or /books.json
         def index
