@@ -4,20 +4,20 @@ info:
   title: API V1
   version: v1
 paths:
-  '/api/v1/books':
+  "/api/v1/books":
     get:
       summary: Get all books
       tags:
-        - Books
+      - Books
       security:
-        - Bearer: []
+      - Bearer: []
       parameters:
-        - name: Authorization
-          in: header
-          required: true
-          description: Authorization token
-          schema:
-            type: string
+      - name: Authorization
+        in: header
+        required: true
+        description: Authorization token
+        schema:
+          type: string
       responses:
         '200':
           description: books found
@@ -26,16 +26,16 @@ paths:
     post:
       summary: Create a book
       tags:
-        - Books
+      - Books
       security:
-        - Bearer: []
+      - Bearer: []
       parameters:
-        - name: Authorization
-          in: header
-          required: true
-          description: Authorization token
-          schema:
-            type: string
+      - name: Authorization
+        in: header
+        required: true
+        description: Authorization token
+        schema:
+          type: string
       responses:
         '302':
           description: redirected
@@ -53,8 +53,8 @@ paths:
                   body:
                     type: string
               required:
-                - title
-                - body
+              - title
+              - body
           application/xml:
             schema:
               type: object
@@ -65,28 +65,28 @@ paths:
                   body:
                     type: string
               required:
-                - title
-                - body
-  '/api/v1/books/{id}':
+              - title
+              - body
+  "/api/v1/books/{id}":
     get:
       summary: Get a book
       tags:
-        - Books
+      - Books
       security:
-        - Bearer: []
+      - Bearer: []
       parameters:
-        - name: Authorization
-          in: header
-          required: true
-          description: Authorization token
-          schema:
-            type: string
-        - name: id
-          in: path
-          required: true
-          description: ID of the book
-          schema:
-            type: string
+      - name: Authorization
+        in: header
+        required: true
+        description: Authorization token
+        schema:
+          type: string
+      - name: id
+        in: path
+        required: true
+        description: ID of the book
+        schema:
+          type: string
       responses:
         '200':
           description: book found
@@ -95,7 +95,7 @@ paths:
         '401':
           description: unauthorized
 servers:
-  - url: https://{defaultHost}
-    variables:
-      defaultHost:
-        default: www.example.com
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com
