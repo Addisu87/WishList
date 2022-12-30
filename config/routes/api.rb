@@ -13,7 +13,6 @@ namespace :api do
   end
 end
 
-
 # Doorkeeper integration
 scope :api do
   scope :v1 do
