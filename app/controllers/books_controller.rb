@@ -1,10 +1,9 @@
-# frozen_string_literal: true
-
 class BooksController < ApplicationController
   include ApplicationHelper
   before_action :set_book, only: %i[show edit update destroy]
   before_action :authenticate_user!
-  before_action :is_admin?
+  before_action :admin
+
   # GET /books or /books.json
   def index
     @books = Book.all
@@ -27,7 +26,7 @@ class BooksController < ApplicationController
 
     respond_to do |format|
       if @book.save
-        format.html { redirect_to book_url(@book), notice: 'Book was successfully created.' }
+        format.html { redirect_to book_url(@book), notice: "Book was successfully created." }
         format.json { render :show, status: :created, location: @book }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -40,7 +39,7 @@ class BooksController < ApplicationController
   def update
     respond_to do |format|
       if @book.update(book_params)
-        format.html { redirect_to book_url(@book), notice: 'Book was successfully updated.' }
+        format.html { redirect_to book_url(@book), notice: "Book was successfully updated." }
         format.json { render :show, status: :ok, location: @book }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -54,7 +53,7 @@ class BooksController < ApplicationController
     @book.destroy
 
     respond_to do |format|
-      format.html { redirect_to books_url, notice: 'Book was successfully destroyed.' }
+      format.html { redirect_to books_url, notice: "Book was successfully destroyed." }
       format.json { head :no_content }
     end
   end

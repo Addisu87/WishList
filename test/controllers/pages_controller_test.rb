@@ -1,13 +1,8 @@
-# frozen_string_literal: true
-
-require 'test_helper'
+require "test_helper"
 
 class PagesControllerTest < ActionDispatch::IntegrationTest
-  setup do
-    create(:doorkeeper_application)
-  end
-  test 'should get home' do
-    get root_path
+  test "should get home" do
+    get pages_home_url
     assert_response :success
   end
 end

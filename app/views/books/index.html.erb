@@ -1,9 +1,7 @@
 <p style="color: green"><%= notice %></p>
+
 <h1>Books</h1>
-<h2>
-  <%= "#{current_user.email}"%>
-</h2>
-<h3><%= "Role: #{current_user.role}" %></h3>
+
 <div id="books">
   <% @books.each do |book| %>
     <%= render book %>
@@ -12,4 +10,5 @@
     </p>
   <% end %>
 </div>
+
 <%= link_to "New book", new_book_path %>
