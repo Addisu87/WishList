@@ -1,19 +1,22 @@
-ENV["RAILS_ENV"] ||= "test"
-require_relative "../config/environment"
-require "rails/test_help"
-require "helpers/doorkeeper_params"
+# frozen_string_literal: true
 
-class ActiveSupport::TestCase
-  include FactoryBot::Syntax::Methods
-  include Helpers::DoorkeeperParams
+ENV['RAILS_ENV'] ||= 'test'
+require_relative '../config/environment'
+require 'rails/test_help'
+require 'helpers/doorkeeper_params'
 
-  # Run tests in parallel with specified workers
-  parallelize(workers: :number_of_processors)
-end
+module ActiveSupport
+  class TestCase
+    include FactoryBot::Syntax::Methods
+    include Helpers::DoorkeeperParams
+    # Run tests in parallel with specified workers
+    parallelize(workers: :number_of_processors)
 
-Shoulda::Matchers.configure do |config|
-  config.integrate do |with|
-    with.test_framework :minitest
-    with.library :rails
+    # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
+    fixtures :all
+
+    include Devise::Test::IntegrationHelpers
+
+    # Add more helper methods to be used by all tests here...
   end
 end

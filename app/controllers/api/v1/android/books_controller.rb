@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 module Api
   module V1
     module Android
       class BooksController < ApiController
         include ApplicationHelper
         before_action :set_book, only: %i[show]
-        before_action :admin?
+        before_action :is_admin?
 
         # GET /books or /books.json
         def index
@@ -14,7 +16,7 @@ module Api
 
         # GET /books/1 or /books/1.json
         def show
-          render json: @books
+          render json: @book
         end
 
         private
