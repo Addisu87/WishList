@@ -6,22 +6,23 @@ module Api
       # GET /books or /books.json
       def index
         @books = Book.all
-        respond_to do |format|
-          format.json { render json: @books }
-          format.any { redirect_to root_url }
-        end
+        render json: @books
       end
 
       # GET /books/1 or /books/1.json
-      def show; end
+      def show
+        render json: @books
+      end
 
       # GET /books/new
       def new
-        @book = Book.new
+        render json: @book = Book.new
       end
 
       # GET /books/1/edit
-      def edit; end
+      def edit
+        render json: @books
+      end
 
       # POST /books or /books.json
       def create

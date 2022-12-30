@@ -4,7 +4,7 @@ module Api
       class BooksController < ApiController
         include ApplicationHelper
         before_action :set_book, only: %i[show]
-        before_action :admin?
+        before_action :is_admin?
 
         # GET /books or /books.json
         def index
