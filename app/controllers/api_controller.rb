@@ -1,6 +1,6 @@
 module Api
   module V1
-    class BooksController < ApplicationController
+    class ApiController < ApplicationController
       # equivalent of authenticate_user! on devise, but this one will check the oauth token
       # before_action :authenticate_user!
       before_action :doorkeeper_authorize!

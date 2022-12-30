@@ -2,8 +2,8 @@ module Api
   module V1
     module Android
       class BooksController < ApiController
+        include ApplicationHelper
         before_action :set_book, only: %i[show]
-        skip_before_action :doorkeeper_authorize!
         before_action :admin?
 
         # GET /books or /books.json
