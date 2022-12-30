@@ -13,7 +13,7 @@ if Doorkeeper::Application.count.zero?
   Doorkeeper::Application.create!(name: "React", redirect_uri: "", scopes: "")
 end
 
-user.first_or_create(
+User.first_or_create(
   email: 'addisu@example.com',
   password: 'password',
   password_confirmation: 'password',
