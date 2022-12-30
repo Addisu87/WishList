@@ -60,6 +60,8 @@ gem "doorkeeper", "~> 5.5", ">= 5.5.4"
 # Define and serve live-updating Swagger JSON for Ruby apps [https://github.com/fotinakis/swagger-blocks]
 gem "swagger-blocks"
 
+# Required for RSpec specs
+gem 'rspec-rails'
 gem 'rswag', '~> 2.5'
 
 # Rack Middleware for handling Cross-Origin Resource Sharing (CORS) [https://github.com/cyu/rack-cors]
@@ -117,9 +119,5 @@ group :test do
   # Simple one-liner tests for common Rails functionality [https://github.com/thoughtbot/shoulda-matchers]
   gem "shoulda-matchers", "~> 4.0"
 
-  # Required for RSpec specs
-  gem 'rspec-rails'
-
-  # Linting
-  gem 'rubocop-rspec'
+  gem 'rubocop-rspec', '~> 1.33'
 end
