@@ -46,17 +46,17 @@ Layout/SpaceInsidePercentLiteralDelimiters:
 # Offense count: 1
 # Configuration parameters: IgnoredMethods.
 Metrics/CyclomaticComplexity:
-  Max: 9
+  Max: 80
 
 # Offense count: 1
 # Configuration parameters: CountComments, CountAsOne, ExcludedMethods, IgnoredMethods.
 Metrics/MethodLength:
-  Max: 20
+  Max: 120
 
 # Offense count: 1
 # Configuration parameters: IgnoredMethods.
 Metrics/PerceivedComplexity:
-  Max: 9
+  Max: 40
 
 # Offense count: 2
 # Cop supports --auto-correct.
@@ -130,7 +130,7 @@ Style/StringLiterals:
 # SupportedStyles: percent, brackets
 Style/SymbolArray:
   EnforcedStyle: percent
-  MinSize: 10
+  MinSize: 60
 
 # Offense count: 2
 # Cop supports --auto-correct.
